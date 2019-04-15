@@ -5,6 +5,8 @@ import Home from "./views/Home.vue"
 
 Vue.use(Router);
 
+const Contact = () => import('./views/Contacts.vue')
+
 export default new Router({
 	routes: [
 		{
@@ -17,6 +19,11 @@ export default new Router({
                     path: '/home',
                     name: 'home',
                     component: Home
+                },
+                {
+                    path: '/contacts',
+                    name: 'contacts',
+                    component: Contact
                 }
             ]
 		}

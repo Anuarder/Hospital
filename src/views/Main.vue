@@ -5,7 +5,9 @@
             fixed
             color="transparent">
             <v-toolbar-title class="white--text headline">
-                Hospital
+                <router-link to="/">
+                    Hospital
+                </router-link>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-side-icon 
@@ -37,6 +39,7 @@
                 <div class="menu">
                     <v-list>
                         <v-list-tile 
+                            :to="item.path"
                             avatar 
                             v-for="item in menu" 
                             :key="item.path">
@@ -64,18 +67,22 @@ export default {
         return {
             sidebar: false,
             menu: [
-                { icon: 'assignment_turned_in', name: 'Sing Up online', path: 'teacherResults' },
-                { icon: 'description', name: 'About', path: 'teacherResults' },
-                { icon: 'account_box', name: 'Personal', path: 'teacherResults' },
-                { icon: 'mail', name: 'Contacts', path: 'teacherResults' },
-                { icon: 'comment', name: 'Reviews', path: 'teacherResults' },
-                { icon: 'question_answer', name: 'FAQ', path: 'teacherResults' },
+                { icon: 'assignment_turned_in', name: 'Sing Up online', path: 'singUp' },
+                { icon: 'description', name: 'About', path: 'about' },
+                { icon: 'account_box', name: 'Personal', path: 'personal' },
+                { icon: 'mail', name: 'Contacts', path: 'contacts' },
+                { icon: 'comment', name: 'Reviews', path: 'reviews' },
+                { icon: 'question_answer', name: 'FAQ', path: 'faq' },
             ]
         }
     }
 }
 </script>
 <style scoped>
+a{
+    color: #fff;
+    text-decoration: none;
+}
 .sidebar{
     padding: 1rem;
 }
