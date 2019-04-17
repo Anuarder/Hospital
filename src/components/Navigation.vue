@@ -1,9 +1,7 @@
 <template>
-    <v-content>
-        <v-toolbar 
-            flat 
-            fixed
-            color="transparent">
+    <div class="navigation">
+        <v-toolbar
+            class="navigation-toolbar">
             <v-toolbar-title class="white--text headline">
                 <router-link to="/">
                     Hospital
@@ -58,11 +56,11 @@
                 </div>
             </div>
         </v-navigation-drawer>
-        <router-view></router-view>
-    </v-content>
+    </div>
 </template>
 <script>
 export default {
+    name: 's-navigation',
     data(){
         return {
             sidebar: false,
@@ -79,6 +77,9 @@ export default {
 }
 </script>
 <style scoped>
+.navigation-toolbar{
+    background-color: #40a2cf;
+}
 a{
     color: #fff;
     text-decoration: none;
